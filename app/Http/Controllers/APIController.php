@@ -17,8 +17,7 @@ class APIController extends Controller
 
     public function login(Request $request)
     {
-        echo ini_get('display_errors');die;
-        phpinfo();die;
+
         $input = $request->all();
         if (!$token = JWTAuth::attempt($input)) {
             return response()->json(['result' => 'wrong email or password.']);
@@ -29,7 +28,8 @@ class APIController extends Controller
     public function get_user_details(Request $request)
     {
         $input = $request->all();
-        $user = JWTAuth::toUser($input['token']);
+
+        $user = JWTAuth::toUser();
         return response()->json(['result' => $user]);
     }
 
