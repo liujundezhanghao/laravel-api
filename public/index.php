@@ -1,7 +1,5 @@
 <?php
-ini_set("display_errors", "On"); 
-error_reporting(E_ALL | E_STRICT);
-//dd('affff');
+
 /**
  * Laravel - A PHP Framework For Web Artisans
  *
