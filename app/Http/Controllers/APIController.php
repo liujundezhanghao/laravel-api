@@ -45,7 +45,9 @@ class APIController extends Controller
     {
         $user  = User::first();
         $token = JWTAuth::fromUser($user);
-        return $token;
+        $res = ['token'=>$token];
+
+        $this->jsonReturn($res);
     }
 
 }
