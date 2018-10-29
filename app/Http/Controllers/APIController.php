@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Exceptions\ApiException;
 use Illuminate\Http\Request;
 use App\User;
 use Hash;
@@ -33,6 +34,8 @@ class APIController extends Controller
     {
         $input  = $request->all();
         $user   = JWTAuth::toUser();
+
+        throw new ApiException('用户未登录');
 
 
         return $this->jsonReturn($user,4);
