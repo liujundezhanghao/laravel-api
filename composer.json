@@ -11,6 +11,7 @@
         "fideloper/proxy": "^4.0",
         "laravel/framework": "5.7.*",
         "laravel/tinker": "^1.0",
+        "qiniu/php-sdk": "^7.2",
         "tymon/jwt-auth": "dev-develop"
     },
     "require-dev": {
