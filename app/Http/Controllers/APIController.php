@@ -35,7 +35,7 @@ class APIController extends Controller
         $input  = $request->all();
         $user   = JWTAuth::toUser();
 
-        throw new ApiException('用户未登录');
+        throw new ApiException('用户未登录',401);
 
 
         return $this->jsonReturn($user,4);

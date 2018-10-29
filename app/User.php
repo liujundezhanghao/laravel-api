@@ -31,6 +31,16 @@ class User extends Authenticatable implements JWTSubject
         'password', 'remember_token',
     ];
 
+    /**
+     * 身份证关联
+     *
+     * @return \Illuminate\Database\Eloquent\Relations\HasOne
+     */
+    public function hasOneIdentity()
+    {
+        return $this->hasOne('App\Identity','user_id', 'id');
+    }
+
     public function getJWTIdentifier()
     {
         return $this->getKey();

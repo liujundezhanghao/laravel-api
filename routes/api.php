@@ -18,13 +18,12 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
 
 Route::group(['middleware' => ['api','cors']], function () {
 
-
-
-
     Route::post('register', 'APIController@register');
     Route::post('login', 'APIController@login');
     Route::group(['middleware' => 'jwt-auth'], function () {
         Route::post('get_user_details', 'APIController@get_user_details');
+
+        Route::post('identity','IdentityController@store');  //实名验证
     });
 
     Route::get('get_token', 'APIController@getToken');
