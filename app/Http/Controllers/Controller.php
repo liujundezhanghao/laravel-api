@@ -20,7 +20,7 @@ class Controller extends BaseController
      * @return \Illuminate\Http\JsonResponse
      *
      */
-    protected function jsonReturn($data, $count = 0, $message = "success")
+    protected function jsonReturn($data=[], $count = 0, $message = "success")
     {
         $request = request();
         if ($count === 0) {
