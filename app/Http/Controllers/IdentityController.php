@@ -23,8 +23,8 @@ class IdentityController extends Controller
      */
     public function store(CreateIdentityRequest $request)
     {
-        $res = $this->repo->create($request);
+        $this->repo->create($request);
 
-        return $this->jsonReturn($res);
+        return $this->jsonReturn();
     }
 }
